@@ -69,10 +69,14 @@ export default function App () {
             <Events />
           </Grid.Row>
           <Grid.Row>
-            {api.query.templateModule &&
-            api.query.templateModule.something && (
+            {
+              api.query.templateModule && api.query.templateModule.proofs &&
               <TemplateModule accountPair={accountPair} />
-            )}
+            }
+            {
+              api.query.templateModule && !api.query.templateModule.proofs &&
+              <h1> Proof of Existence not found 😔 </h1>
+            }
           </Grid.Row>
         </Grid>
         <DeveloperConsole />
